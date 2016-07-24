@@ -1,0 +1,142 @@
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../favicon.ico">
+
+        <title>Weather Forecasting App</title>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+        <!-- Custom styles for this template -->
+
+        <link href="assets/css/index.css" rel="stylesheet">
+        <link href="assets/css/jumbotron.css" rel="stylesheet">
+
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+      </head>
+
+      <body>
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="/">Weather Forecast App</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+
+            </div><!--/.navbar-collapse -->
+          </div>
+        </nav>
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+          <div class="container">
+            <div id="map" data-bind="map:mapOne"></div>
+
+          </div>
+        </div>
+
+        <div class="container">
+          <!-- Example row of columns -->
+          <div class="row">
+                <div id="exTab1" class="container">	
+                <ul  class="nav nav-pills">
+                            <li class="active">
+                                <a  href="#1a" data-toggle="tab">Current Weather</a>
+                            </li>
+                            <li>
+                                <a href="#2a" data-toggle="tab">Weather Forecast</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content clearfix">
+                            <div class="tab-pane active" id="1a">
+                                <div class="wrapper">
+                                  <div class="widget-container">
+                                    <div class="top-left">
+                                      <h1 class="city" id="city" data-bind="text:dayWeather_city"></h1>
+                                      <h2 id="day" data-bind="text:dayWeather_fullday"></h2>
+                                      <h3 id="date" data-bind="text:dayWeather_fullDate"></h3>
+                                      <h3 id="time" data-bind="text:dayWeather_time"></h3>
+
+                                      <p class="geo"></p>
+                                    </div>
+                                    <div class="top-right">
+                                      <h1 id="weather-status">Weather / Weather Status</h1>
+                                        <div id="weatherIcon" class="weather-icon" ></div>
+                                        <h3 id="desc" data-bind="text:dayWeather_desc"></h3>
+                                    </div>
+                                    <div class="horizontal-half-divider"></div>
+                                    <div class="bottom-left">
+                                      <h1 id="temperature" data-bind="text:dayWeather_temp"></h1>
+                                      <h2 id="celsius">&degC</h2>
+                                    </div>
+                                    <div class="vertical-half-divider"></div>
+                                    <div class="bottom-right">
+                                      <div class="other-details-key">
+                                        <p>Wind Speed</p>
+                                        <p>Humidity</p>
+                                        <p>Pressure</p>
+                                        <p>Min. Temperature</p>
+                                        <p>Max. Temperature</p>
+                                      </div>
+                                      <div class="other-details-values">
+                                          <p class="windspeed"><span data-bind="text:dayWeather_windSpeed"></span> Km/h</p>
+                                          <p class="humidity"><span  data-bind="text:dayWeather_humidity"> </span>%</p>
+                                          <p class="pressure"><span data-bind="text:dayWeather_pressure"></span> hPa</p>
+                                          <p class="sunrise-time"><span data-bind="text:dayWeather_minTemp"></span> &degC</p>
+                                          <p class="sunset-time"><span data-bind="text:dayWeather_maxTemp"></span> &degC</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane graph-div" id="2a">
+                                <h3>Temperature Forecast for the <span  data-bind="text:dayWeather_city"></span></h3>
+                                 <div id="chart" class="chart-container">
+                                     
+                                     
+            
+                                 </div>
+                            </div>
+                        </div>
+                  </div>
+                      
+            </div>
+
+          </div>
+
+          <hr>
+
+          <footer>
+            <p>&copy; Created By Pankaj Panigrahi</p>
+          </footer>
+        </div> <!-- /container -->
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3.chart/0.2.1/d3.chart.js"></script>
+        <script src="assets/js/knockout-min.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3TYufBtztH5yYwzFg_l9ytjdqGkJNKHc&callback=initialize" async defer></script>
+      </body>
+    </html>
