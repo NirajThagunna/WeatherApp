@@ -141,7 +141,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 var viewModel = new MyViewModel();
 
 function loadWeather(){
-    $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat="+viewModel.mapOne.lat+"&lon="+viewModel.mapOne.lng+"&units=metric&APPID=e2de3fcf953c365ce224997245da6350", function(data) { 
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?lat="+viewModel.mapOne.lat+"&lon="+viewModel.mapOne.lng+"&units=metric&APPID=e2de3fcf953c365ce224997245da6350", function(data) { 
     // Now use this data to update your view models, 
     // and Knockout will update your UI automatically 
         viewModel.dayWeather_city(data.name);
