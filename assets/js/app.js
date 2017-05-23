@@ -155,7 +155,7 @@ function loadWeather(){
         viewModel.dayWeather_maxTemp(data.main.temp_max);
         
         
-         $("#weatherIcon").html("<img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png' alt='Icon depicting current weather.' height='70px'>");
+         $("#weatherIcon").html("<img src='https://openweathermap.org/img/w/"+data.weather[0].icon+".png' alt='Icon depicting current weather.' height='70px'>");
         
         var tmstmp = Math.floor(new Date().getTime()/1000);
         var dt;
@@ -181,7 +181,7 @@ function loadWeather(){
 }
 
 function loadForecast(){
-    $.getJSON("http://api.openweathermap.org/data/2.5/forecast?lat="+viewModel.mapOne.lat+"&lon="+viewModel.mapOne.lng+"&units=metric&APPID=e2de3fcf953c365ce224997245da6350", function(resData) { 
+    $.getJSON("https://api.openweathermap.org/data/2.5/forecast?lat="+viewModel.mapOne.lat+"&lon="+viewModel.mapOne.lng+"&units=metric&APPID=e2de3fcf953c365ce224997245da6350", function(resData) { 
         
         
     //alert( data.list[0].main.temp);
